@@ -1,2 +1,1 @@
-#UFSC
-University stuff
+University stuff, mostly for tracking classes
