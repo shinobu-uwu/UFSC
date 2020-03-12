@@ -1,2 +1,0 @@
-# UFSC
-Stuff from uni
