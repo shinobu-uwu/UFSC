@@ -1,3 +1,9 @@
+# Nesse exercício usei como modelo o jogo Yu-Gi-Oh!
+# Nesse jogo cada baralho tem de 40 a 60 cartas e existem cartas de monstros, armadilhas e mágicas
+# Cada jogador começa com 5 cartas e 8000 pontos de vida
+# Apenas programei as interações do jogador com o baralho e os tipos de cartas, já que é o que o exercício pediu
+# As interações do jogador com o baralho são apenas: Sacar ou embaralhar
+
 from random import randrange
 from copy import deepcopy
 
@@ -65,12 +71,9 @@ dm = CartaMonstro("Mago Negro", "Monstro Normal", "O mago definitivo em termos d
 pog = CartaMagica("Pote da ganância", "Magia Normal", "?")
 bewd = CartaMonstro("Dragão branco de olhos azuis", "Monstro Normal" ,"Descrição muito grande", "Luz", 8, "Dragão")
 dmg = CartaMonstro("Maga Negra", "Montrol de Efeito", "blah blah blah", "Trevas", 6, "Mago")
-idk = CartaMonstro("2", "20", "idk", "Luz", 6, "Mago")
 bd = CartaMonstro("Dragão Calibregado", "Monstrol Link", "idk idk", "Trevas", 4, "Dragão")
-idk2 = CartaMonstro("2", "20", "idk", "Luz", 6, "Mago")
-idk3 = CartaMonstro("2", "20", "idk", "Luz", 6, "Mago")
 
-jogador = Jogador([dm, pog, bewd, dmg, idk, idk2, bd, idk3])
+jogador = Jogador([dm, pog, bewd, dmg, bd])
 jogador.sacar()
 jogador.embaralhar()
 for carta in jogador.baralho:

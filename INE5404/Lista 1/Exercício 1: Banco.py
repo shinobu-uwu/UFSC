@@ -4,28 +4,50 @@ class Cliente:
         self.nome = nome
         self.telefone = telefone
 
+
+
 class Conta:
 
     def __init__(self, clientes : []):
         self.titulares = clientes
         self.saldo = 0
+        self.historico = list()
 
     def saque(self, valor):
         if valor <= self.saldo:
             self.saldo -= valor
+            self.historico.append(f"Saque de {valor}")
         else:
             print("Saldo insuficiente")
 
 
     def deposito(self, valor):
         self.saldo += valor
+        self.historico.append(f"Depósito de {valor}")
 
     def get_saldo(self):
         return self.saldo
 
+    def extrato(self):
+        print("Extrato da conta: \n")
+        for transacao in self.historico:
+            print(transacao)
+        print()
+
+    def resumo_titulares(self):
+        print("Titulares:\n")
+        for cliente in self.titulares:
+            print(cliente.nome + ", telefone " + cliente.telefone)
+        print(f"\nSaldo de {self.saldo}")
+        
+
+
+
 class ContaCorrente(Conta):
 
     pass
+
+
 
 class ContaEspecial(Conta):
 
@@ -36,6 +58,7 @@ class ContaEspecial(Conta):
     def saque(self, valor):
         if valor <= self.saldo + self.limite:
             self.saldo -= valor
+            self.historico.append(f"Depósito de {valor}")
         else:
             print("Saldo insuficiente")
 
@@ -45,10 +68,6 @@ class ContaEspecial(Conta):
 cliente = Cliente("João", "3123")
 conta = ContaCorrente([cliente])
 conta.deposito(50)
-conta.saque(20)
-print(conta.get_saldo())
-
-conta = ContaEspecial([cliente], 50)
-conta.deposito(50)
-conta.saque(75)
-print(conta.get_saldo())
+conta.saque(25)
+conta.extrato()
+conta.resumo_titulares()
