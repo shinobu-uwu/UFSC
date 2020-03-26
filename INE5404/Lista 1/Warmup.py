@@ -51,7 +51,6 @@ class Televisao:
     
 
 
-
 # criando objetos para parte 2:
 
 tv1 = Televisao(21, "Philips", 2)
