@@ -25,8 +25,6 @@ class Conta:
         self.saldo += valor
         self.historico.append(f"Depósito de {valor}")
 
-    def get_saldo(self):
-        return self.saldo
 
     def extrato(self):
         print("Extrato da conta: \n")
