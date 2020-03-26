@@ -4,6 +4,8 @@
 # Apenas programei as interações do jogador com o baralho e os tipos de cartas, já que é o que o exercício pediu
 # As interações do jogador com o baralho são apenas: Sacar ou embaralhar
 
+
+
 from random import randrange
 from copy import deepcopy
 
