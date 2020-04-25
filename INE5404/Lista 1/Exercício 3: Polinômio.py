@@ -12,12 +12,7 @@ class Polinomio:
 
     
     def grau(self):
-        grau = 0
-
-        for coeficiente in self.coeficientes[1:]:
-            grau += 1
-
-        return grau
+        return len(self.coeficientes) - 1
 
     
 
