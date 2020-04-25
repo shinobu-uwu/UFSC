@@ -5,16 +5,13 @@ from copy import deepcopy
 class Polinomio:
 
 
-
     def __init__(self, coeficientes):
         self.coeficientes = coeficientes
-
 
     
     def grau(self):
         return len(self.coeficientes) - 1
-
-    
+  
 
     def avaliar(self, x):
         resultado = self.coeficientes[0]
@@ -23,7 +20,6 @@ class Polinomio:
             resultado += self.coeficientes[i] * x ** i
 
         return resultado
-
 
 
     def soma(self, polinomio):
@@ -40,7 +36,6 @@ class Polinomio:
                 resultado[i] += self.coeficientes[i]
 
         return resultado
-
 
 
     def multiplicacao(self, polinomio):
