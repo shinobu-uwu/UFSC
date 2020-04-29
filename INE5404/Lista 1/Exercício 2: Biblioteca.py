@@ -1,13 +1,15 @@
 class Livro:
 
 
-    def __init__(self, titulo, autores, ano, editora, edicao, volume):
+    def __init__(self, titulo, autores, ano, editora, edicao, volume, numero_paginas):
         self.__titulo = titulo
         self.__autores = autores
         self.__ano = ano
         self.__editora = editora
         self.__edicao = edicao
         self.__volume = volume
+        self.__numero_paginas = numero_paginas
+        self.sendo_lido = False
 
     
     @property
@@ -38,3 +40,7 @@ class Livro:
     @property
     def volume(self):
         return self.__volume
+
+    @property
+    def numero_paginas(self):
+        return self.__numero_paginas

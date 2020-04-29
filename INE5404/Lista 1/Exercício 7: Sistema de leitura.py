@@ -11,6 +11,7 @@ class Usuario:
         self.__nome = nome
         self.__senha = senha
         self.__id = Usuario.id_estatico
+        self.lendo = False
         Usuario.id_estatico += 1
 
     @property
@@ -49,7 +50,7 @@ class Sistema:
         resultado = []
         for usuario in self.__usuarios:
             resultado.append(usuario.nome)
-        print(resultado)
+        return resultado
 
 
     def inserir_livro(self, livro):
@@ -83,15 +84,11 @@ class Sistema:
         return resultado
 
 
-    
+    def leitura(self, usuario, livro):            
+        if usuario.lendo == False and livro.sendo_lido == False:
+            for i in range(livro.numero_paginas):
+                #mostra a página do livro na tela
+                input("Aperte ENTER para ir para próxima página")
 
-
-
-
-livro = biblioteca.Livro("1", "2", "3", "4", "5", "6")
-sistema = Sistema()
-sistema.inserir_livro(livro)
-print(sistema.pesquisa("4"))
-sistema.criar_usuario("matheus", "123")
-sistema.criar_usuario("joão", "456")
-sistema.listar_usuarios()
+        else:
+            print("Você não pode ler esse livro no momento")
