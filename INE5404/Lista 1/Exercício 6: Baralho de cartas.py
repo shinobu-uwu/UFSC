@@ -39,11 +39,12 @@ class CartaMonstro(Carta):
         self.atributo = atributo
         self.nivel = nivel
         self.raca = raca
+        
           
                     
 class Jogador:
 
-    def __init__(self, baralho : []):
+    def __init__(self, baralho):
         self.baralho = baralho
         self.vida = 8000
         self.mao = []
@@ -65,19 +66,3 @@ class Jogador:
             self.baralho.pop(n)
 
         self.baralho = deepcopy(baralho_embaralhado)
-
-
-
-
-dm = CartaMonstro("Mago Negro", "Monstro Normal", "O mago definitivo em termos de ataque e defesa", "Trevas", 7, "Mago")
-pog = CartaMagica("Pote da ganância", "Magia Normal", "?")
-bewd = CartaMonstro("Dragão branco de olhos azuis", "Monstro Normal" ,"Descrição muito grande", "Luz", 8, "Dragão")
-dmg = CartaMonstro("Maga Negra", "Montrol de Efeito", "blah blah blah", "Trevas", 6, "Mago")
-bd = CartaMonstro("Dragão Calibregado", "Monstrol Link", "idk idk", "Trevas", 4, "Dragão")
-
-jogador = Jogador([dm, pog, bewd, dmg, bd])
-jogador.sacar()
-jogador.embaralhar()
-for carta in jogador.baralho:
-    print(carta.nome)
-    
