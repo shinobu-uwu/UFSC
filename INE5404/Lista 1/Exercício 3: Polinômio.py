@@ -5,8 +5,16 @@ import matplotlib.pyplot as mpl
 class Polinomio:
 
     def __init__(self, coeficientes):
-        self.coeficientes = coeficientes
-        self.grau = len(self.coeficientes) - 1  
+        self.__coeficientes = coeficientes
+        self.__grau = len(self.coeficientes) - 1  
+
+    @property
+    def coeficientes(self):
+        return self.__coeficientes
+
+    @property
+    def grau(self):
+        return self.__grau
 
     def avaliar(self, x):
         resultado = self.coeficientes[0]
@@ -16,7 +24,7 @@ class Polinomio:
 
     def soma(self, polinomio):
         resultado = list()
-        if len(self.coeficientes) > len(polinomio.coeficientes):
+        if self.__grau > polinomio.grau:
             resultado = deepcopy(self.coeficientes)
             for i in range(len(polinomio.coeficientes)):
                 resultado[i] += polinomio.coeficientes[i]
@@ -33,6 +41,7 @@ class Polinomio:
                 resultado[i + j] += self.coeficientes[i] * polinomio.coeficientes[j] 
         return resultado
 
+    #Para o método funcionar é necessário ter o tkinter instalado
     def plot(self, a, b): #Desafio de plotar o polinômio no intervalo [a,b]
         x = np.linspace(a, b, 100)
         y = self.coeficientes[0]
