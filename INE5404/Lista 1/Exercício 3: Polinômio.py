@@ -41,7 +41,7 @@ class Polinomio:
                 resultado[i + j] += self.coeficientes[i] * polinomio.coeficientes[j] 
         return resultado
 
-    #Para o método funcionar é necessário ter o tkinter instalado
+    #Para o método funcionar é necessário ter o tkinter, numpy e matplotlib instalado
     def plot(self, a, b): #Desafio de plotar o polinômio no intervalo [a,b]
         x = np.linspace(a, b, 100)
         y = self.coeficientes[0]
