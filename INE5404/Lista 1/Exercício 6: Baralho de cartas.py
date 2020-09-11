@@ -20,29 +20,14 @@ class Baralho:
 class Jogador:
 
     def __init__(self, nome, mao_inicial, baralho):
-        self.__nome = nome
         self.__mao = list()
         for i in range(0, mao_inicial):
             self.sacar()
         self.__baralho = baralho
 
-    #Em vez de mostrar os objetos e em qual endereço de memória estão,
-    #essas propriedades mostrarão o nome das cartas
     @property
     def mao(self):
-        mao_em_string = ""
-        for i in range(0, len(self.__mao) - 1):
-            mao_em_string += f"{self.__mao[i].nome}, "
-        mao_em_string += self.__mao[-1].nome
-        return mao_em_string
-
-    @property
-    def baralho(self):
-        baralho_em_string = ""
-        for i in range(0, len(self.__baralho.cartas) - 1):
-            baralho_em_string += f"{self.__baralho.cartas[i].nome}, "
-        baralho_em_string += self.__baralho.cartas[-1].nome
-        return baralho_em_string
+        return self.__mao
 
     def sacar(self):
         self.__mao.append(self.__baralho.cartas[0])
