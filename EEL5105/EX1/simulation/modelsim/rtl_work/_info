@@ -1,0 +1,40 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/home/matheus/Documents/UFSC/EEL5105/EX1/simulation/modelsim
+Eex1
+Z1 w1600112880
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 d/home/matheus/Documents/UFSC/EEL5105/EX1/simulation/modelsim
+Z5 8/home/matheus/Documents/UFSC/EEL5105/EX1/ex1.vhd
+Z6 F/home/matheus/Documents/UFSC/EEL5105/EX1/ex1.vhd
+l0
+L4
+VAOBcbgARMXNmQfl;gfX3n1
+!s100 `WE:RP0lNHFMeL29ZN5Ho3
+Z7 OV;C;10.1d;51
+31
+!i10b 1
+Z8 !s108 1600113078.076787
+Z9 !s90 -reportprogress|300|-93|-work|work|/home/matheus/Documents/UFSC/EEL5105/EX1/ex1.vhd|
+Z10 !s107 /home/matheus/Documents/UFSC/EEL5105/EX1/ex1.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+Aarch_ex1
+R2
+R3
+DEx4 work 3 ex1 0 22 AOBcbgARMXNmQfl;gfX3n1
+l16
+L15
+V@SBU:V8W`4eifGhTdi3zm0
+!s100 caJ=keo@d6lLCbR]JXoO;2
+R7
+31
+!i10b 1
+R8
+R9
+R10
+R11
+R12
