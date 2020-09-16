@@ -3,7 +3,7 @@ import math
 def bissecao(a, b, erro, funcao):
     fa = funcao(a)
     fb = funcao(b)
-    fxm = erro + 1#Aqui pode ser qualquer número que seja maior que o erro
+    fxm = erro + 1#Aqui pode ser qualquer número maior que o erro
     k = 0
 
     while abs(fxm) > erro:
