@@ -19,7 +19,7 @@ def falsa_posicao(a, b, erro, funcao):
     return k, xk, fxk
 
 #Letra a:
-def f(x):#Função para ser usada na bisseção
+def f(x):#Função para ser usada na falsa posição
     return math.exp(x) + x
 
 print(falsa_posicao(-1, 0, 10 ** (-2), f))
