@@ -1,5 +1,3 @@
-
-
 class CategoriaProduto:
 
     def __init__(self, titulo):
@@ -12,5 +10,3 @@ class CategoriaProduto:
     @titulo.setter
     def titulo(self, titulo):
         self.__titulo = titulo
-
-    """Insira aqui os demais metodos ... """
