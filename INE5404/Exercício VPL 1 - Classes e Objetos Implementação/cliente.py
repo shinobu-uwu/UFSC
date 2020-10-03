@@ -19,5 +19,3 @@ class Cliente:
     @fone.setter
     def fone(self, fone):
         self.__fone = fone
-
-    """Insira aqui os demais metodos ... """
