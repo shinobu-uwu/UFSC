@@ -23,7 +23,10 @@ class BotXandao(Bot):
             para_mostrar += "{} - {}\n".format(comando.id, comando.mensagem)
 
         return para_mostrar
-        
+
+        if para_mostrar == "":
+            return "NENHUM COMANDO DISPONÍVEL, CRIA AÍ!"
+
     def executa_comando(self, cmd):
         try:
             cmd = int(cmd)
@@ -31,7 +34,7 @@ class BotXandao(Bot):
             return "É PRA BOTAR UM NÚMERO!!"
 
         for comando in self.__comandos:
-            if comando.id == str(cmd):
+            if comando.id == cmd:
                 return comando.getRandomResposta()
 
         return "DIGITA UM NÚMERO CERTO!!"
