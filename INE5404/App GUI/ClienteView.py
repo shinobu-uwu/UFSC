@@ -14,7 +14,7 @@ class ClienteView():
                             [sg.Text(text = "Nome", font = ("Helvetica", 14)), sg.InputText(size = (50, 50), font = ("Helvectica", 14), key = "nome")],
                             [sg.Text(text = "Código", font = ("Helvetica", 14)), sg.InputText(size = (50, 50), font = ("Helvectica", 14), key = "codigo")],
                             [sg.Button(button_text = "Cadastrar", font = ("Helvectica", 14)), sg.Button(button_text = "Consultar", font = ("Helvectica", 14))],
-                            [sg.Text(text = "", font = ("Helvetica", 14), key = "resultado", size = (50, 1))]
+                            [sg.Text(font = ("Helvetica", 14), key = "resultado", auto_size_text = True, size = (50, 2))]
                            ]
         self.__window = sg.Window("Consulta de clientes", self.__container ,font=("Helvetica", 14))
         return self.__container
