@@ -1,14 +1,15 @@
 from abstractControladorElevador import AbstractControladorElevador
-from elevadorJahNoUltimoAndarException import ElevadorJahNoUltimoAndarException
-from elevadorJahNoTerreoException import ElevadorJahNoTerreoException
-from elevadorCheioException import ElevadorCheioException
-from elevadorJahVazioException import ElevadorJahVazioException
 from comandoInvalidoException import ComandoInvalidoException
+from elevadorCheioException import ElevadorCheioException
+from elevadorJahNoTerreoException import ElevadorJahNoTerreoException
+from elevadorJahNoUltimoAndarException import ElevadorJahNoUltimoAndarException
+from elevadorJahVazioException import ElevadorJahVazioException
 from elevador import Elevador
+
 
 class ControladorElevador(AbstractControladorElevador):
     def __init__(self):
-        self.__elevador = Elevador(0, 0, 30, 30)
+        pass
 
     def subir(self):
         try:
@@ -16,7 +17,7 @@ class ControladorElevador(AbstractControladorElevador):
         except ElevadorJahNoUltimoAndarException:
             raise ElevadorJahNoUltimoAndarException
         else:
-            return "Elevador subiu um andar!"
+            return "Elevador subiu 1 andar!"
 
     def descer(self):
         try:
@@ -24,7 +25,7 @@ class ControladorElevador(AbstractControladorElevador):
         except ElevadorJahNoTerreoException:
             raise ElevadorJahNoTerreoException
         else:
-            return "Elevador desceu um andar!"
+            return "Elevador desceu 1 andar!"
 
     def entraPessoa(self):
         try:
@@ -32,7 +33,7 @@ class ControladorElevador(AbstractControladorElevador):
         except ElevadorCheioException:
             raise ElevadorCheioException
         else:
-            return "Entrou uma pessoa!"
+            return "Entrou uma pessoa no elevador!"
 
     def saiPessoa(self):
         try:
@@ -40,15 +41,16 @@ class ControladorElevador(AbstractControladorElevador):
         except ElevadorJahVazioException:
             raise ElevadorJahVazioException
         else:
-            return "Saiu uma pessoa!"
+            return "Saiu uma pessoa do elevador!"
+
+    def inicializarElevador(self, andarAtual: int, totalAndaresPredio: int, capacidade: int, totalPessoas: int):
+        if isinstance(andarAtual, int) and isinstance(totalAndaresPredio, int) and isinstance(capacidade, int) and isinstance(totalPessoas, int) and\
+        andarAtual >= 0 and totalAndaresPredio >= 0 and capacidade >= 0 and totalPessoas >= 0 and\
+        andarAtual < totalAndaresPredio and totalPessoas <= capacidade:
+            self.__elevador = Elevador(capacidade, totalPessoas, andarAtual, totalAndaresPredio)
+        else:
+            raise ComandoInvalidoException
 
     @property
     def elevador(self):
         return self.__elevador
-
-    def inicializarElevador(self, andarAtual: int, totalAndaresPredio: int, capacidade: int, totalPessoas: int):
-        if isinstance(andarAtual, int) and andarAtual >= 0 and andarAtual <= totalAndaresPredio and isinstance(totalAndaresPredio, int) and totalAndaresPredio\
- >= 0 and isinstance(capacidade, int) and capacidade >= 0 and isinstance(totalPessoas, int) and totalPessoas >= 0 and totalPessoas <= capacidade:
-            self.__elevador = Elevador(andarAtual, totalAndaresPredio, capacidade, totalPessoas)
-        else:
-            raise ComandoInvalidoException

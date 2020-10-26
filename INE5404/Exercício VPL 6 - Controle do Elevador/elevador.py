@@ -6,43 +6,39 @@ from elevadorJahVazioException import ElevadorJahVazioException
 
 
 class Elevador(AbstractElevador):
-    def __init__(self, capacidade, andar, totalPesosas, totalAndaresPredio):
+    def __init__(self, capacidade, totalPessoas, andarAtual, totalAndaresPredio):
         self.__capacidade = capacidade
-        self.__totalPessoas = totalPesosas
-        self.__andarAtual = andar
+        self.__totalPessoas = totalPessoas
         self.__totalAndaresPredio = totalAndaresPredio
+        self.__andarAtual = andarAtual
 
     def descer(self):
-        try:
-            self.__andarAtual -= 1
-        except self.__andarAtual == 0:
+        if self.__andarAtual == 0:
             raise ElevadorJahNoTerreoException
         else:
-            return "Elevador desceu um andar!"
-    
+            self.__andarAtual -= 1
+            return str(self.__andarAtual)
+
     def entraPessoa(self):
-        try:
-            self.__totalPessoas += 1
-        except self.__totalPessoas == self.__capacidade:
+        if self.__totalPessoas == self.__capacidade:
             raise ElevadorCheioException
         else:
-            return "Saiu uma pessoa!"
+            self.__totalPessoas += 1
+            return str(self.__totalPessoas)
 
     def saiPessoa(self):
-        try:
-            self.__totalPessoas -= 1
-        except self.__totalPessoas == 0:
+        if self.__totalPessoas == 0:
             raise ElevadorJahVazioException
         else:
-            return "Saiu uma pessoa"
-    
+            self.__totalPessoas -= 1
+            return str(self.__totalPessoas)
+
     def subir(self):
-        try:
-            self.__andarAtual += 1
-        except self.__andarAtual == self.__totalAndaresPredio:
+        if self.__andarAtual == self.__totalAndaresPredio:
             raise ElevadorJahNoUltimoAndarException
         else:
-            return "Elevador subiu um andar!"
+            self.__andarAtual += 1
+            return str(self.__andarAtual)
 
     @property
     def capacidade(self):

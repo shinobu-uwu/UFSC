@@ -15,8 +15,8 @@ class ClienteController:
         rodando = True
         resultado = ''
         while rodando:
-            print(self.__clienteDAO.cache)
             event, values = self.__telaCliente.le_eventos()
+            print(event, values)
             if event == sg.WIN_CLOSED:
                 self.__clienteDAO.dump()
                 rodando = False
