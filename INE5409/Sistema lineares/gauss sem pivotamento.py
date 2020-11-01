@@ -7,12 +7,22 @@ def gauss(matriz):
             pivo = matriz[i][k] / matriz[k][k]                  
             for j in range(len(matriz[i])):                     
                 matriz[i][j] -= pivo * matriz[k][j]
-    return matriz
+    solucao = [0 for x in range(len(matriz))]
+    solucao[-1] = matriz[-1][-1] / matriz[-1][-2]
+    for i in range(len(matriz) - 2, -1, -1):
+        soma = 0
+        for j in range(i + 1, len(matriz)):
+            soma = soma + a[i][j] * solucao[j]
+        solucao[i] = (matriz[i][-1] - soma) / matriz[i][i]
+    return solucao
     
-#Exemplo
+#Exercício
 a = [
-        [3, 5, 7, 9],
-        [4, 5, 4, 3],
-        [12, 16, 15, 2]
+        [4, 2, 3, 7],
+        [2, -4, -1, 1],
+        [-1, 1, 4, -5]
     ]
-print(gauss(a))
+
+resultado = gauss(a)
+for i in range(len(resultado)):
+    print(f"x{i + 1}: {resultado[i]}")
