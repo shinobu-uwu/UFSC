@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class Imposto(ABC):
     def __init__(self, aliquota, incidencia_imposto):
         self.__aliquota = aliquota

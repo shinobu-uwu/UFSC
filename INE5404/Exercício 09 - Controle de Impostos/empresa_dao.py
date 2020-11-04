@@ -3,10 +3,11 @@ from empresa import Empresa
 from empresa_duplicada_exception import EmpresaDuplicadaException
 
 
-class EmpresaDao:
+class EmpresaDAO:
     def __init__(self, datasource = "empresa.pkl"):
         self.__datasource = datasource
         self.__object_cache = {}
+        self.__load()
 
     @property
     def object_cache(self):
@@ -27,14 +28,19 @@ class EmpresaDao:
         
     def add(self, empresa):
         if isinstance(empresa, Empresa):
-            if empresa.cnpj in self.__object_cache.keys():
+            if empresa in self.__object_cache.values():
                 raise EmpresaDuplicadaException
             else:
                 self.__object_cache[empresa.cnpj] = empresa
                 self.__dump()
 
-    def get(self, cnpj : int):
-        return self.__object_cache[cnpj]
+    def get(self, cnpj):
+        try:
+            a = self.__object_cache[cnpj]
+        except KeyError:
+            a = None
+        finally:
+            return a
 
     def remove(self, empresa):
         self.__object_cache.pop(empresa.cnpj)

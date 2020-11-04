@@ -1,6 +1,7 @@
 from imposto import Imposto
 
-class Irpj(Imposto):
+
+class IRPJ(Imposto):
     def __init__(self, aliquota, incidencia_imposto, desconto):
         super().__init__(aliquota, incidencia_imposto)
         self.__desconto = desconto

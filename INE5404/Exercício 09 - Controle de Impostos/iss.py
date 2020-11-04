@@ -1,6 +1,7 @@
 from imposto import Imposto
 
-class Iss(Imposto):
+
+class ISS(Imposto):
     def __init__(self, aliquota, incidencia_imposto):
         super().__init__(aliquota, incidencia_imposto)
         self.__servicos = []
@@ -12,4 +13,4 @@ class Iss(Imposto):
         self.__servicos.remove(nome)
 
     def calcula_aliquota(self):
-        return self.aliquota - 0.1 * len(self.__servicos)
+        return self.aliquota - 0.1*len(self.__servicos)

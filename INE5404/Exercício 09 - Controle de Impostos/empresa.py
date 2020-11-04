@@ -1,4 +1,6 @@
 from imposto import Imposto
+from incidencia_imposto import IncidenciaImposto
+
 
 class Empresa:
     def __init__(self, nome_de_fantasia, cnpj):
@@ -20,7 +22,7 @@ class Empresa:
     @nome_de_fantasia.setter
     def nome_de_fantasia(self, nome_de_fantasia):
         self.__nome_de_fantasia = nome_de_fantasia
-
+ 
     @property
     def impostos(self):
         return self.__impostos
@@ -50,14 +52,14 @@ class Empresa:
     def total_impostos(self):
         resultado = 0
         for imposto  in self.__impostos:
-            if imposto.incidencia_imposto.PRODUCAO:
-                resultado += self.__faturamento_producao * imposto.calcula_aliquota()
-            elif imposto.incidencia_imposto.SERVICOS:
-                resultado += self.__faturamento_servicos * imposto.calcula_aliquota()
-            elif imposto.incidencia_imposto.VENDAS:
-                resutlado += self.__faturamento_vendas * imposto.calcula_aliquota()
+            if imposto.incidencia_imposto == IncidenciaImposto.PRODUCAO:
+                resultado += self.__faturamento_producao*imposto.calcula_aliquota()/100
+            elif imposto.incidencia_imposto == IncidenciaImposto.SERVICOS:
+                resultado += self.__faturamento_servicos*imposto.calcula_aliquota()/100
+            elif imposto.incidencia_imposto == IncidenciaImposto.VENDAS:
+                resultado += self.__faturamento_vendas*imposto.calcula_aliquota()/100
             else:
-                resultado += self.faturamento_total() * imposto.calcula_aliquota()
+                resultado += self.faturamento_total()*imposto.calcula_aliquota()/100
         return resultado
 
     def set_faturamentos(self, fat_servicos, fat_producao, fat_vendas):

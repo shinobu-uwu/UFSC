@@ -1,6 +1,7 @@
 from imposto import Imposto
 
-class Icms(Imposto):
+
+class ICMS(Imposto):
     def __init__(self, aliquota, incidencia_imposto, diferenca_estado):
         super().__init__(aliquota, incidencia_imposto)
         self.__diferenca_estado = diferenca_estado
