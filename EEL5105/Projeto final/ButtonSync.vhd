@@ -31,13 +31,13 @@ begin
 		case btn0state is
 			when EsperaApertar =>
 				if key0 = '0' then btn0next <= SaidaAtiva; else btn0next <= EsperaApertar; end if;
-				btn0 <= '1';
+				btn0 <= '0';
 			when SaidaAtiva =>
 				if key0 = '0' then btn0next <= EsperaSoltar; else btn0next <= EsperaApertar; end if;	
-				btn0 <= '0';
+				btn0 <= '1';
 			when EsperaSoltar =>
 				if key0 = '0' then btn0next <= EsperaSoltar;	else btn0next <= EsperaApertar; end if;	
-				btn0 <= '1';
+				btn0 <= '0';
 		end case;		
 	end process;
 	
@@ -46,13 +46,13 @@ begin
 		case btn1state is
 			when EsperaApertar =>
 				if key1 = '0' then btn1next <= SaidaAtiva; else btn1next <= EsperaApertar; end if;
-				btn1 <= '1';
+				btn1 <= '0';
 			when SaidaAtiva =>
 				if key1 = '0' then btn1next <= EsperaSoltar; else btn1next <= EsperaApertar; end if;	
-				btn1 <= '0';
+				btn1 <= '1';
 			when EsperaSoltar =>
 				if key1 = '0' then btn1next <= EsperaSoltar;	else btn1next <= EsperaApertar; end if;	
-				btn1 <= '1';
+				btn1 <= '0';
 		end case;		
 	end process;
 	
