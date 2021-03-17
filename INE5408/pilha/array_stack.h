@@ -37,7 +37,7 @@ class ArrayStack {
 
  private:
     T* contents;
-    int top_;
+    T* top_;
     std::size_t max_size_;
 
     static const auto DEFAULT_SIZE = 10u;
