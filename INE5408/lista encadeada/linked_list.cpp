@@ -10,32 +10,50 @@ namespace structures {
     }
 
     template<typename T>
-    structures::LinkedList<T>::~LinkedList<T>() {
-        
+    structures::LinkedList<T>::~LinkedList() {
+        Node *aux = head;  // Percorrer a lista
+        Node *aux2;  // Guardar referência para ser deletada
+        while (aux != nullptr) {
+            aux2 = aux;
+            aux = aux->next();
+            aux2->data().~T();
+            delete aux2;
+        }
     }
 
     template<typename T>
     void structures::LinkedList<T>::clear() {
-        
+        Node *aux = head;  // Percorrer a lista
+        Node *aux2;  // Guardar referência para ser deletada
+        while (aux != nullptr) {
+            aux2 = aux;
+            aux = aux->next();
+            aux2->data().~T();
+            delete aux2;
+        }
+        size_ = 0;
+        head = nullptr;
     }
 
     template<typename T>
-    void structures::LinkedList<T>::push_back(const T &data) {
+    void structures::LinkedList<T>::push_front(const T &data) {
         Node* newNode = new Node(data, head);
         head = newNode;
         size_++;
     }
 
     template<typename T>
-    void structures::LinkedList<T>::push_front(const T &data) {
+    void structures::LinkedList<T>::push_back(const T &data) {
         insert(data, size_);
     }
 
     // TODO arrumar implementação para insert no index 0
     template<typename T>
     void structures::LinkedList<T>::insert(const T &data, std::size_t index) {
+        if (index < 0 || index > size())
+            throw std::out_of_range("Indice inválido");
         if (index == 0)
-            push_back(data);
+            push_front(data);
         else {
             Node* aux = head;
             Node* aux2; // node que está no index
@@ -46,15 +64,25 @@ namespace structures {
             aux2 = aux->next();
             newNode->next(aux2);
             aux->next(newNode);
-            printf("%p", newNode->next());
             size_++;
         }
     }
 
-//     template<typename T>
-//     void structures::LinkedList<T>::insert_sorted(const T &data) {
-
-//     }
+    template<typename T>
+    void structures::LinkedList<T>::insert_sorted(const T &data) {
+        Node* aux = head;
+        int i = 0 ; // Index para inserção
+        while (aux != nullptr) {
+            if (aux->data() >= data){
+                insert(data, i);
+                break;
+            }
+            aux = aux->next();
+            i++;
+        }
+        if (aux == nullptr)
+            push_back(data);
+    }
 
     template<typename T>
     T& structures::LinkedList<T>::at(std::size_t index) {
@@ -66,8 +94,13 @@ namespace structures {
         return aux->data();
     }
 
+    // TODO fix pop(0)
     template<typename T>
     T structures::LinkedList<T>::pop(std::size_t index) {
+        if (empty())
+            throw std::out_of_range("Lista vázia");
+        if (index < 0 || index >= size())
+            throw std::out_of_range("Indice inválido");
         Node* aux = head;
         Node* aux2;
         T value;
@@ -82,22 +115,36 @@ namespace structures {
         size_--;
         return value;
     }
-   
 
     template<typename T>
     T structures::LinkedList<T>::pop_back() {
-         
+        int i = size() - 1;
+        if (i == 0)
+            return pop_front();
+        return pop(size() - 1);
     }
 
-//     template<typename T>
-//     T structures::LinkedList<T>::pop_front() {
-        
-//     }
+    template<typename T>
+    T structures::LinkedList<T>::pop_front() {
+        if (empty())
+            throw std::out_of_range("Lista vazia");
+        Node *aux = head;  // ponteiro para destruir a head atual
+        T value = aux->data();  // variável para retornar o dado que estava na head
+        head = head->next();
+        aux->data().~T();
+        delete aux;
+        size_--;
+        return value;
+    }
 
-//     template<typename T>
-//     void structures::LinkedList<T>::remove(const T &data) {
-
-//     }
+    template<typename T>
+    void structures::LinkedList<T>::remove(const T &data) {
+        int i = find(data);
+        if (i == 0)
+            pop_front();
+        else
+            pop(i);
+    }
 
     template<typename T>
     bool structures::LinkedList<T>::empty() const {
@@ -113,10 +160,12 @@ namespace structures {
     template<typename T>
     std::size_t structures::LinkedList<T>::find(const T &data) const {
         Node* aux = head;
-        int index = 0;
-        while (aux->data() != data || index != size()) {
-            index++;
+        std::size_t index = 0;
+        for (int i = 0; i < size(); i++) {
+            if (aux->data() == data)
+                break;
             aux = aux->next();
+            index++;
         }
         return index;
     }
@@ -137,18 +186,12 @@ namespace structures {
 }
 
 int main() {
-    structures::LinkedList<int> a;
-    a.push_back(3);
-    a.push_back(2);
-    a.push_back(1);
-    a.pop(2);
-    // a.push_front(500);
-    // a.insert(20, 4);
-    a.print();
-    // std::cout << a.size() << '\n';
-    // auto b = a.at(2);
-    // printf("%i", b);
-    // printf("%p", nullptr);
-    // a.~LinkedList();
-    // printf("%p", &a);
+    structures::LinkedList<int> a{};
+    for (auto i = 0; i < 10; ++i) {
+        a.push_back(i);
+    }
+    a.pop(5);
+    a.pop(5);
+    a.size();
+    a.pop(8);
 }
