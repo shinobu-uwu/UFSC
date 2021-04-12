@@ -33,6 +33,8 @@ public:
     const T& at(std::size_t index) const;
     const T& operator[](std::size_t index) const;
     void print();
+    void peel_mirror(int r);
+    void reposicionaSubLista(int p, int k);
 private:
     T* contents;
     std::size_t size_;

@@ -43,8 +43,8 @@ class LinkedList {
     //! ...
     std::size_t find(const T& data) const;  // posição do dado
     //! ...
-    std::size_t size() const;  // tamanho da lista
-
+        std::size_t size() const;  // tamanho da lista
+        void reposicionaSubLista(int p, int k);
     void print();
 
  private:

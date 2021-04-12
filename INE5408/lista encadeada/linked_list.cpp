@@ -183,6 +183,23 @@ namespace structures {
             aux = aux->next();
         }
     }
+
+    template<typename T>
+    void structures::LinkedList<T>::reposicionaSubLista(int p, int k) {
+        LinkedList<T> *elementosSelecionados = new LinkedList<T>();
+
+        // Percorremos a lista de p ate p + k, assim conseguimos k elementos a partir
+        // de p, tirando os elementos da lista atual e colocamos na nova.
+        for (int i = p; i < p + k; i++)
+            elementosSelecionados->push_back(pop(i));
+
+        // Pegamos todos os elementos selecionados e colocamos um por um no final da lista
+        for (int i = 0; i < elementosSelecionados->size(); i++)
+            push_back(elementosSelecionados->at(i));
+
+        // Destruimos a lista dos elementos selecionados
+        delete elementosSelecionados;
+    }
 }
 
 int main() {
@@ -190,8 +207,6 @@ int main() {
     for (auto i = 0; i < 10; ++i) {
         a.push_back(i);
     }
-    a.pop(5);
-    a.pop(5);
-    a.size();
-    a.pop(8);
+    a.reposicionaSubLista(2, 5);
+    a.print();
 }
