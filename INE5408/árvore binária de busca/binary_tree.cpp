@@ -1,11 +1,6 @@
 #include "binary_tree.h"
 #include <cstdint>
 #include <iostream>
-#include <stdexcept>
-#include <type_traits>
-#include <typeinfo>
-#include <vector>
-#include <string>
 
 template<typename T>
 structures::BinaryTree<T>::BinaryTree() {

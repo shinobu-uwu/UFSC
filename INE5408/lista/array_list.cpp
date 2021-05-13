@@ -180,17 +180,3 @@ namespace structures {
         }
     }
 }  // namespace structures
-
-
-using namespace structures;
-using namespace std;
-
-int main()
-{
-    ArrayList<char>* a = new ArrayList<char>(100);
-
-    for (int i = 'a'; i < 'a' + 8; i++)
-        a->push_back(i);
-    a->reposicionaSubLista(2, 5);
-    a->print();
-}
