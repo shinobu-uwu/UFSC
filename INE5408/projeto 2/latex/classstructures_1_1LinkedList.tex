@@ -1,0 +1,79 @@
+\hypertarget{classstructures_1_1LinkedList}{}\doxysection{Referência à classe structures\+::Linked\+List}
+\label{classstructures_1_1LinkedList}\index{structures::LinkedList@{structures::LinkedList}}
+
+
+Lista encadeada genérica.  
+
+
+
+
+{\ttfamily \#include $<$linked\+\_\+list.\+h$>$}
+
+\doxysubsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_ae0698cfefd91c294f65b8851dbebc713}\label{classstructures_1_1LinkedList_ae0698cfefd91c294f65b8851dbebc713}} 
+\mbox{\hyperlink{classstructures_1_1LinkedList_ae0698cfefd91c294f65b8851dbebc713}{Linked\+List}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão, inicializa uma lista vazia. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_a4bde57bd5b2c22df58511aca92cc93dd}\label{classstructures_1_1LinkedList_a4bde57bd5b2c22df58511aca92cc93dd}} 
+\mbox{\hyperlink{classstructures_1_1LinkedList_a4bde57bd5b2c22df58511aca92cc93dd}{$\sim$\+Linked\+List}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_a17518d107c26fcbdaa6e143ac54d72dc}\label{classstructures_1_1LinkedList_a17518d107c26fcbdaa6e143ac54d72dc}} 
+void \mbox{\hyperlink{classstructures_1_1LinkedList_a17518d107c26fcbdaa6e143ac54d72dc}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Deleta todos os elementos. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_aad839493b8c7cee3bd58ac4253ee30ef}\label{classstructures_1_1LinkedList_aad839493b8c7cee3bd58ac4253ee30ef}} 
+void \mbox{\hyperlink{classstructures_1_1LinkedList_aad839493b8c7cee3bd58ac4253ee30ef}{push\+\_\+back}} (const T \&data)
+\begin{DoxyCompactList}\small\item\em Insere no final. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_a799e1f08027d5f13d4bb1b8d0f1421d8}\label{classstructures_1_1LinkedList_a799e1f08027d5f13d4bb1b8d0f1421d8}} 
+void \mbox{\hyperlink{classstructures_1_1LinkedList_a799e1f08027d5f13d4bb1b8d0f1421d8}{push\+\_\+front}} (const T \&data)
+\begin{DoxyCompactList}\small\item\em Insere no inicio. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_adcd4bff09509caddbbb79a11cb2d1e8f}\label{classstructures_1_1LinkedList_adcd4bff09509caddbbb79a11cb2d1e8f}} 
+void \mbox{\hyperlink{classstructures_1_1LinkedList_adcd4bff09509caddbbb79a11cb2d1e8f}{insert}} (const T \&data, std\+::size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Insere no índice especificado. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_a0424964689117b57eb10ec0b6e8ee40e}\label{classstructures_1_1LinkedList_a0424964689117b57eb10ec0b6e8ee40e}} 
+void \mbox{\hyperlink{classstructures_1_1LinkedList_a0424964689117b57eb10ec0b6e8ee40e}{insert\+\_\+sorted}} (const T \&data)
+\begin{DoxyCompactList}\small\item\em Insere em ordem. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_a17b473cc2942b279974b48cd70296d30}\label{classstructures_1_1LinkedList_a17b473cc2942b279974b48cd70296d30}} 
+T \& \mbox{\hyperlink{classstructures_1_1LinkedList_a17b473cc2942b279974b48cd70296d30}{at}} (std\+::size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Acessa o elemento na posição, lançando exceções se necessário. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_a6a091f1d512d6aa6f81f748ccd8067ba}\label{classstructures_1_1LinkedList_a6a091f1d512d6aa6f81f748ccd8067ba}} 
+T \& \mbox{\hyperlink{classstructures_1_1LinkedList_a6a091f1d512d6aa6f81f748ccd8067ba}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Acessa o elemento na posição. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_ad8ab4d26e71fe2db2e950653add79856}\label{classstructures_1_1LinkedList_ad8ab4d26e71fe2db2e950653add79856}} 
+void \mbox{\hyperlink{classstructures_1_1LinkedList_ad8ab4d26e71fe2db2e950653add79856}{pop}} (std\+::size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Retirar da posição. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_aae96a20d318d024d7bdb78660ae678f9}\label{classstructures_1_1LinkedList_aae96a20d318d024d7bdb78660ae678f9}} 
+void \mbox{\hyperlink{classstructures_1_1LinkedList_aae96a20d318d024d7bdb78660ae678f9}{pop\+\_\+back}} ()
+\begin{DoxyCompactList}\small\item\em Retirar do final. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_aae0756b190753daa02e55ba8bd7b8b0a}\label{classstructures_1_1LinkedList_aae0756b190753daa02e55ba8bd7b8b0a}} 
+void \mbox{\hyperlink{classstructures_1_1LinkedList_aae0756b190753daa02e55ba8bd7b8b0a}{pop\+\_\+front}} ()
+\begin{DoxyCompactList}\small\item\em Retirar do inicio. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_acd2df612c722d02715f8500a0b2cccc0}\label{classstructures_1_1LinkedList_acd2df612c722d02715f8500a0b2cccc0}} 
+void \mbox{\hyperlink{classstructures_1_1LinkedList_acd2df612c722d02715f8500a0b2cccc0}{remove}} (const T \&data)
+\begin{DoxyCompactList}\small\item\em Remover o elemento. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_a00b4fc60277cb34af9e3cbe7c5091b74}\label{classstructures_1_1LinkedList_a00b4fc60277cb34af9e3cbe7c5091b74}} 
+bool \mbox{\hyperlink{classstructures_1_1LinkedList_a00b4fc60277cb34af9e3cbe7c5091b74}{empty}} () const
+\begin{DoxyCompactList}\small\item\em Verifica se a lista está vazia. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_a85763d7f75bac081153f5dfe47e73db5}\label{classstructures_1_1LinkedList_a85763d7f75bac081153f5dfe47e73db5}} 
+bool \mbox{\hyperlink{classstructures_1_1LinkedList_a85763d7f75bac081153f5dfe47e73db5}{contains}} (const T \&data)
+\begin{DoxyCompactList}\small\item\em Verifica se o elemento está na lista. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_a9e2b97df090e383fc38066c6b9bfefc8}\label{classstructures_1_1LinkedList_a9e2b97df090e383fc38066c6b9bfefc8}} 
+std\+::size\+\_\+t \mbox{\hyperlink{classstructures_1_1LinkedList_a9e2b97df090e383fc38066c6b9bfefc8}{find}} (const T \&data) const
+\begin{DoxyCompactList}\small\item\em A posição do elemento específico. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_a3d06185819f6534a826101bc2c18ba94}\label{classstructures_1_1LinkedList_a3d06185819f6534a826101bc2c18ba94}} 
+std\+::size\+\_\+t \mbox{\hyperlink{classstructures_1_1LinkedList_a3d06185819f6534a826101bc2c18ba94}{size}} () const
+\begin{DoxyCompactList}\small\item\em Tamanho da lista. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_ab648e74041f9b63a74a09eeae88d455d}\label{classstructures_1_1LinkedList_ab648e74041f9b63a74a09eeae88d455d}} 
+std\+::size\+\_\+t \mbox{\hyperlink{classstructures_1_1LinkedList_ab648e74041f9b63a74a09eeae88d455d}{binary\+\_\+search}} (const T \&data)
+\begin{DoxyCompactList}\small\item\em Busca binária na lista, retorna size se o elemento não estiver presente. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1LinkedList_aa5c5c3b695669e04783aa647490056ba}\label{classstructures_1_1LinkedList_aa5c5c3b695669e04783aa647490056ba}} 
+std\+::size\+\_\+t \mbox{\hyperlink{classstructures_1_1LinkedList_aa5c5c3b695669e04783aa647490056ba}{binary\+\_\+search}} (const T \&data, std\+::size\+\_\+t left, std\+::size\+\_\+t right)
+\begin{DoxyCompactList}\small\item\em Busca binária na lista, dado um range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Lista encadeada genérica. 
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+linked\+\_\+list.\+h\end{DoxyCompactItemize}

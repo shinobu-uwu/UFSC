@@ -1,0 +1,82 @@
+\hypertarget{classstructures_1_1TrieNodeLinkedList}{}\doxysection{Referência à classe structures\+::Trie\+Node\+Linked\+List}
+\label{classstructures_1_1TrieNodeLinkedList}\index{structures::TrieNodeLinkedList@{structures::TrieNodeLinkedList}}
+
+
+Lista encadeada especializada em ponteiros.  
+
+
+
+
+{\ttfamily \#include $<$trie\+\_\+node\+\_\+linked\+\_\+list.\+h$>$}
+
+\doxysubsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_a08b91a43201021bc9a30b7dbfac111d4}\label{classstructures_1_1TrieNodeLinkedList_a08b91a43201021bc9a30b7dbfac111d4}} 
+\mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_a08b91a43201021bc9a30b7dbfac111d4}{Trie\+Node\+Linked\+List}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão, inicializa uma lista vazia. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_aaf18235e6a19c1738079625ef4921a32}\label{classstructures_1_1TrieNodeLinkedList_aaf18235e6a19c1738079625ef4921a32}} 
+\mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_aaf18235e6a19c1738079625ef4921a32}{$\sim$\+Trie\+Node\+Linked\+List}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_afd4ca57dff5d4c0a9c736197ad7328a8}\label{classstructures_1_1TrieNodeLinkedList_afd4ca57dff5d4c0a9c736197ad7328a8}} 
+void \mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_afd4ca57dff5d4c0a9c736197ad7328a8}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Deleta todos os elementos. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_ad06c7149b86c4893d2daebf8345d1a08}\label{classstructures_1_1TrieNodeLinkedList_ad06c7149b86c4893d2daebf8345d1a08}} 
+void \mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_ad06c7149b86c4893d2daebf8345d1a08}{push\+\_\+back}} (const T \&data)
+\begin{DoxyCompactList}\small\item\em Insere no final. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_a9815400ba4e572fee97484106cd1aa03}\label{classstructures_1_1TrieNodeLinkedList_a9815400ba4e572fee97484106cd1aa03}} 
+void \mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_a9815400ba4e572fee97484106cd1aa03}{push\+\_\+front}} (const T \&data)
+\begin{DoxyCompactList}\small\item\em Insere no inicio. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_a685ab570108b8bac2b3f838cff375364}\label{classstructures_1_1TrieNodeLinkedList_a685ab570108b8bac2b3f838cff375364}} 
+void \mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_a685ab570108b8bac2b3f838cff375364}{insert}} (const T \&data, std\+::size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Insere no índice especificado. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_a08c88efc861347eabd4dff80a826b1f6}\label{classstructures_1_1TrieNodeLinkedList_a08c88efc861347eabd4dff80a826b1f6}} 
+void \mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_a08c88efc861347eabd4dff80a826b1f6}{insert\+\_\+sorted}} (const T \&data)
+\begin{DoxyCompactList}\small\item\em Insere em ordem. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_ad62c04f9594ffc656cf935b38450ae9b}\label{classstructures_1_1TrieNodeLinkedList_ad62c04f9594ffc656cf935b38450ae9b}} 
+std\+::size\+\_\+t \mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_ad62c04f9594ffc656cf935b38450ae9b}{insert\+\_\+sorted\+\_\+unique}} (const T \&data)
+\begin{DoxyCompactList}\small\item\em Insere em ordem se o elemento não estiver na lista, considerando uma lista ordenada. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_a53e79fe944c6d717d09bfd9c3675a3dc}\label{classstructures_1_1TrieNodeLinkedList_a53e79fe944c6d717d09bfd9c3675a3dc}} 
+T \& \mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_a53e79fe944c6d717d09bfd9c3675a3dc}{at}} (std\+::size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Acessa o elemento na posição, lançando exceções se necessário. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_a01e6766ec897a514d61b073ff6f65376}\label{classstructures_1_1TrieNodeLinkedList_a01e6766ec897a514d61b073ff6f65376}} 
+T \& \mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_a01e6766ec897a514d61b073ff6f65376}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Acessa o elemento na posição. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_aff1f944143200c2eef807eaf69fbf264}\label{classstructures_1_1TrieNodeLinkedList_aff1f944143200c2eef807eaf69fbf264}} 
+void \mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_aff1f944143200c2eef807eaf69fbf264}{pop}} (std\+::size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Retirar da posição. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_ad96edbad0acacbc96eff6f42cc79e030}\label{classstructures_1_1TrieNodeLinkedList_ad96edbad0acacbc96eff6f42cc79e030}} 
+void \mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_ad96edbad0acacbc96eff6f42cc79e030}{pop\+\_\+back}} ()
+\begin{DoxyCompactList}\small\item\em Retirar do final. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_a8126175b40ba7a2e83e4cd02cd4a3d21}\label{classstructures_1_1TrieNodeLinkedList_a8126175b40ba7a2e83e4cd02cd4a3d21}} 
+void \mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_a8126175b40ba7a2e83e4cd02cd4a3d21}{pop\+\_\+front}} ()
+\begin{DoxyCompactList}\small\item\em Retirar do inicio. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_af71016ee41f615d22f2be53d0e42499d}\label{classstructures_1_1TrieNodeLinkedList_af71016ee41f615d22f2be53d0e42499d}} 
+void \mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_af71016ee41f615d22f2be53d0e42499d}{remove}} (const T \&data)
+\begin{DoxyCompactList}\small\item\em Remover o elemento. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_ae27567a3373d6b4da3c2309f2346adf1}\label{classstructures_1_1TrieNodeLinkedList_ae27567a3373d6b4da3c2309f2346adf1}} 
+bool \mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_ae27567a3373d6b4da3c2309f2346adf1}{empty}} () const
+\begin{DoxyCompactList}\small\item\em Verifica se a lista está vazia. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_aa6f189fa6c00bcb19d4c058b9d17cca3}\label{classstructures_1_1TrieNodeLinkedList_aa6f189fa6c00bcb19d4c058b9d17cca3}} 
+bool \mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_aa6f189fa6c00bcb19d4c058b9d17cca3}{contains}} (const T \&data)
+\begin{DoxyCompactList}\small\item\em Verifica se o elemento está na lista. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_a8d085c97dd7f3407bd0464cdc1be0572}\label{classstructures_1_1TrieNodeLinkedList_a8d085c97dd7f3407bd0464cdc1be0572}} 
+std\+::size\+\_\+t \mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_a8d085c97dd7f3407bd0464cdc1be0572}{find}} (const T \&data) const
+\begin{DoxyCompactList}\small\item\em A posição do elemento específico. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_a0715937f436da3fa3ac465987f978453}\label{classstructures_1_1TrieNodeLinkedList_a0715937f436da3fa3ac465987f978453}} 
+std\+::size\+\_\+t \mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_a0715937f436da3fa3ac465987f978453}{size}} () const
+\begin{DoxyCompactList}\small\item\em Tamanho da lista. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_a92f025da06dc6b458347b486a2fffc54}\label{classstructures_1_1TrieNodeLinkedList_a92f025da06dc6b458347b486a2fffc54}} 
+std\+::size\+\_\+t \mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_a92f025da06dc6b458347b486a2fffc54}{binary\+\_\+search}} (const T \&data)
+\begin{DoxyCompactList}\small\item\em Busca binária na lista, retorna size se o elemento não estiver presente. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstructures_1_1TrieNodeLinkedList_ab4f62d3f68a96d1214b9089b6f2c767f}\label{classstructures_1_1TrieNodeLinkedList_ab4f62d3f68a96d1214b9089b6f2c767f}} 
+std\+::size\+\_\+t \mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList_ab4f62d3f68a96d1214b9089b6f2c767f}{binary\+\_\+search}} (const T \&data, std\+::size\+\_\+t left, std\+::size\+\_\+t right)
+\begin{DoxyCompactList}\small\item\em Busca binária na lista, dado um range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Lista encadeada especializada em ponteiros. 
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+trie\+\_\+node\+\_\+linked\+\_\+list.\+h\end{DoxyCompactItemize}

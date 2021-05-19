@@ -1,0 +1,52 @@
+\hypertarget{structstructures_1_1TrieNode}{}\doxysection{Referência à estrutura structures\+::Trie\+Node}
+\label{structstructures_1_1TrieNode}\index{structures::TrieNode@{structures::TrieNode}}
+
+
+Nó da trie, armazena letra, os seus filhos, posição e comprimento se for palavra.  
+
+
+
+
+{\ttfamily \#include $<$trie\+\_\+node.\+h$>$}
+
+\doxysubsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structstructures_1_1TrieNode_adb772fa5476dde7237bac1241f3d41f2}\label{structstructures_1_1TrieNode_adb772fa5476dde7237bac1241f3d41f2}} 
+\mbox{\hyperlink{structstructures_1_1TrieNode_adb772fa5476dde7237bac1241f3d41f2}{Trie\+Node}} (char \mbox{\hyperlink{structstructures_1_1TrieNode_af1788f7618ca3cb235348a200950fadc}{letter}})
+\begin{DoxyCompactList}\small\item\em Construtor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structstructures_1_1TrieNode_a13c7fa037096f8dd720f168c4030f44d}\label{structstructures_1_1TrieNode_a13c7fa037096f8dd720f168c4030f44d}} 
+\mbox{\hyperlink{structstructures_1_1TrieNode_a13c7fa037096f8dd720f168c4030f44d}{$\sim$\+Trie\+Node}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structstructures_1_1TrieNode_aa08eaa983a3fad01ba15fd0850fb0631}\label{structstructures_1_1TrieNode_aa08eaa983a3fad01ba15fd0850fb0631}} 
+bool \mbox{\hyperlink{structstructures_1_1TrieNode_aa08eaa983a3fad01ba15fd0850fb0631}{operator==}} (const \mbox{\hyperlink{structstructures_1_1TrieNode}{Trie\+Node}} \&node)
+\begin{DoxyCompactList}\small\item\em Operador de igualdade, compara as letras de 2 nós. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structstructures_1_1TrieNode_af7dd3fc8c06e406815896f43b0cce022}\label{structstructures_1_1TrieNode_af7dd3fc8c06e406815896f43b0cce022}} 
+bool \mbox{\hyperlink{structstructures_1_1TrieNode_af7dd3fc8c06e406815896f43b0cce022}{operator$>$}} (const \mbox{\hyperlink{structstructures_1_1TrieNode}{Trie\+Node}} \&node)
+\begin{DoxyCompactList}\small\item\em Operador maior, compara as letras de 2 nós. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structstructures_1_1TrieNode_ae03736a274f81a852e3b745621b9d352}\label{structstructures_1_1TrieNode_ae03736a274f81a852e3b745621b9d352}} 
+bool \mbox{\hyperlink{structstructures_1_1TrieNode_ae03736a274f81a852e3b745621b9d352}{operator!=}} (const \mbox{\hyperlink{structstructures_1_1TrieNode}{Trie\+Node}} \&node)
+\begin{DoxyCompactList}\small\item\em Operador diferente, compara as letras de 2 nós. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structstructures_1_1TrieNode_af1788f7618ca3cb235348a200950fadc}\label{structstructures_1_1TrieNode_af1788f7618ca3cb235348a200950fadc}} 
+char \mbox{\hyperlink{structstructures_1_1TrieNode_af1788f7618ca3cb235348a200950fadc}{letter}}
+\begin{DoxyCompactList}\small\item\em Letra do nó \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structstructures_1_1TrieNode_acf4ff7091d078ac2c8dcf118618ec3e2}\label{structstructures_1_1TrieNode_acf4ff7091d078ac2c8dcf118618ec3e2}} 
+\mbox{\hyperlink{classstructures_1_1TrieNodeLinkedList}{structures\+::\+Trie\+Node\+Linked\+List}}$<$ \mbox{\hyperlink{structstructures_1_1TrieNode}{structures\+::\+Trie\+Node}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{structstructures_1_1TrieNode_acf4ff7091d078ac2c8dcf118618ec3e2}{children}}
+\begin{DoxyCompactList}\small\item\em Filhos do nó \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structstructures_1_1TrieNode_af79dc97f4c1cf7bc4b5c5978a3540cb0}\label{structstructures_1_1TrieNode_af79dc97f4c1cf7bc4b5c5978a3540cb0}} 
+unsigned long \mbox{\hyperlink{structstructures_1_1TrieNode_af79dc97f4c1cf7bc4b5c5978a3540cb0}{position}}
+\begin{DoxyCompactList}\small\item\em Posição de ínico da palavra, 0 se não for final de uma palavra. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structstructures_1_1TrieNode_a05be1221414ed3931412e03f043bddb1}\label{structstructures_1_1TrieNode_a05be1221414ed3931412e03f043bddb1}} 
+unsigned long \mbox{\hyperlink{structstructures_1_1TrieNode_a05be1221414ed3931412e03f043bddb1}{length}}
+\begin{DoxyCompactList}\small\item\em Tamanho da palavra, 0 se não for final de uma palavra. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Nó da trie, armazena letra, os seus filhos, posição e comprimento se for palavra. 
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+trie\+\_\+node.\+h\end{DoxyCompactItemize}

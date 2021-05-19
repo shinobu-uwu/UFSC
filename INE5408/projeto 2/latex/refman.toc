@@ -1,0 +1,14 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\babel@toc {portuges}{}
+\contentsline {chapter}{\numberline {1}Índice dos componentes}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Lista de componentes}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Documentação da classe}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Referência à classe structures\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Linked\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}List}{3}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Descrição detalhada}{4}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Referência à classe parser\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Parser}{4}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Descrição detalhada}{4}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}Referência à estrutura structures\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Trie\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Node}{5}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Descrição detalhada}{5}{subsection.2.3.1}%
+\contentsline {section}{\numberline {2.4}Referência à classe structures\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Trie\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Node\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Linked\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}List}{5}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Descrição detalhada}{6}{subsection.2.4.1}%
+\contentsline {chapter}{\'Indice}{7}{section*.6}%

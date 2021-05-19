@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projeto II: Código-Fonte de linked_list.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Projeto II
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">linked_list.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef LINKED_LIST_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define LINKED_LIST_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define TEMP template&lt;typename T&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>structures{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;TEMP</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classstructures_1_1LinkedList.html">LinkedList</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">class </span>Node {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        T data_;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        Node *next_;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">explicit</span> Node(T data) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            data_ = data;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            next_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        Node(T data, Node *next) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            data_ = data;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            next_ = next;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        T&amp; data() {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">return</span> data_;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        Node* next() {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">return</span> next_;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> next(Node *next) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            next_ = next;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    };</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::size_t size_;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    Node *head;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    Node* end() {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        Node *aux = head;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">while</span> (aux != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            aux = aux-&gt;next();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> aux;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    Node* get_index(std::size_t index) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        Node *aux = head;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; index; i++)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            aux = aux-&gt;next();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> aux;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#ae0698cfefd91c294f65b8851dbebc713">   58</a></span>&#160;    <a class="code" href="classstructures_1_1LinkedList.html#ae0698cfefd91c294f65b8851dbebc713">LinkedList</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#a4bde57bd5b2c22df58511aca92cc93dd">   60</a></span>&#160;    <a class="code" href="classstructures_1_1LinkedList.html#a4bde57bd5b2c22df58511aca92cc93dd">~LinkedList</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#a17518d107c26fcbdaa6e143ac54d72dc">   62</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classstructures_1_1LinkedList.html#a17518d107c26fcbdaa6e143ac54d72dc">clear</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#aad839493b8c7cee3bd58ac4253ee30ef">   64</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classstructures_1_1LinkedList.html#aad839493b8c7cee3bd58ac4253ee30ef">push_back</a>(<span class="keyword">const</span> T&amp; data);</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#a799e1f08027d5f13d4bb1b8d0f1421d8">   66</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classstructures_1_1LinkedList.html#a799e1f08027d5f13d4bb1b8d0f1421d8">push_front</a>(<span class="keyword">const</span> T&amp; data);</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#adcd4bff09509caddbbb79a11cb2d1e8f">   68</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classstructures_1_1LinkedList.html#adcd4bff09509caddbbb79a11cb2d1e8f">insert</a>(<span class="keyword">const</span> T&amp; data, std::size_t index);</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#a0424964689117b57eb10ec0b6e8ee40e">   70</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classstructures_1_1LinkedList.html#a0424964689117b57eb10ec0b6e8ee40e">insert_sorted</a>(<span class="keyword">const</span> T&amp; data);</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#a17b473cc2942b279974b48cd70296d30">   72</a></span>&#160;    T&amp; <a class="code" href="classstructures_1_1LinkedList.html#a17b473cc2942b279974b48cd70296d30">at</a>(std::size_t index);</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#a6a091f1d512d6aa6f81f748ccd8067ba">   74</a></span>&#160;    T&amp; <a class="code" href="classstructures_1_1LinkedList.html#a6a091f1d512d6aa6f81f748ccd8067ba">operator[]</a>(std::size_t index);</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#ad8ab4d26e71fe2db2e950653add79856">   76</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classstructures_1_1LinkedList.html#ad8ab4d26e71fe2db2e950653add79856">pop</a>(std::size_t index);</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#aae96a20d318d024d7bdb78660ae678f9">   78</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classstructures_1_1LinkedList.html#aae96a20d318d024d7bdb78660ae678f9">pop_back</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#aae0756b190753daa02e55ba8bd7b8b0a">   80</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classstructures_1_1LinkedList.html#aae0756b190753daa02e55ba8bd7b8b0a">pop_front</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#acd2df612c722d02715f8500a0b2cccc0">   82</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classstructures_1_1LinkedList.html#acd2df612c722d02715f8500a0b2cccc0">remove</a>(<span class="keyword">const</span> T&amp; data);</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#a00b4fc60277cb34af9e3cbe7c5091b74">   84</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classstructures_1_1LinkedList.html#a00b4fc60277cb34af9e3cbe7c5091b74">empty</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#a85763d7f75bac081153f5dfe47e73db5">   86</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classstructures_1_1LinkedList.html#a85763d7f75bac081153f5dfe47e73db5">contains</a>(<span class="keyword">const</span> T&amp; data);</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#a9e2b97df090e383fc38066c6b9bfefc8">   88</a></span>&#160;    std::size_t <a class="code" href="classstructures_1_1LinkedList.html#a9e2b97df090e383fc38066c6b9bfefc8">find</a>(<span class="keyword">const</span> T&amp; data) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#a3d06185819f6534a826101bc2c18ba94">   90</a></span>&#160;    std::size_t <a class="code" href="classstructures_1_1LinkedList.html#a3d06185819f6534a826101bc2c18ba94">size</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#ab648e74041f9b63a74a09eeae88d455d">   92</a></span>&#160;    std::size_t <a class="code" href="classstructures_1_1LinkedList.html#ab648e74041f9b63a74a09eeae88d455d">binary_search</a>(<span class="keyword">const</span> T&amp; data);</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classstructures_1_1LinkedList.html#aa5c5c3b695669e04783aa647490056ba">   94</a></span>&#160;    std::size_t <a class="code" href="classstructures_1_1LinkedList.html#aa5c5c3b695669e04783aa647490056ba">binary_search</a>(<span class="keyword">const</span> T&amp; data, std::size_t left, std::size_t right);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}  <span class="comment">// namespace structures</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">// structures::LinkedList&lt;T&gt;::LinkedList() {</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">//     size_ = 0;</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">//     head = nullptr;</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">// structures::LinkedList&lt;T&gt;::~LinkedList() {</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">//     clear();</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">// void structures::LinkedList&lt;T&gt;::clear() {</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">//     while (!empty())</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">//         pop_front();</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">// void structures::LinkedList&lt;T&gt;::push_back(const T&amp; data) {</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">//     insert(data, size());</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">// void structures::LinkedList&lt;T&gt;::push_front(const T&amp; data) {</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">//     if (empty()) {</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">//         head = new Node(data);</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">//     } else {</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">//         head  = new Node(data, head);</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">//     }</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">//     size_++;</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">// void structures::LinkedList&lt;T&gt;::insert(const T&amp; data, std::size_t index) {</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">//     if (index &gt; size())</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">//         throw std::out_of_range(&quot;Invalid index&quot;);</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment">//     if (index == 0) {</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">//         push_front(data);</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">//     } else {</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment">//         Node *aux = head;</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">//         for (int i = 0; i &lt; index - 1; i++)</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">//             aux = aux-&gt;next();</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">//         Node *newNode = new Node(data, aux-&gt;next());</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">//         aux-&gt;next(newNode);</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">//         size_++;</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">//     }</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">// void structures::LinkedList&lt;T&gt;::insert_sorted(const T&amp; data) {</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">//     std::size_t index = 0;</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">//     Node *aux = head;</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">//     while (aux != nullptr &amp;&amp; data &gt; aux-&gt;data()) {</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">//         index++;</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">//         aux = aux-&gt;next();</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">//     }</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">//     insert(data, index);</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">// T&amp; structures::LinkedList&lt;T&gt;::at(std::size_t index) {</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">//     if (index &lt; 0 || index &gt;= size())</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment">//         throw std::out_of_range(&quot;Not a valid index&quot;);</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">//     Node *aux = head;</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">//     for (int i = 0; i &lt; index; i++)</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">//         aux = aux-&gt;next();</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">//     return aux-&gt;data();</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">// T&amp; structures::LinkedList&lt;T&gt;::operator[](std::size_t index) {</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">//     Node *aux = head;</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">//     for (int i = 0; i &lt; index; i++)</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">//         aux = aux-&gt;next();</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">//     return aux-&gt;data();</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">// void structures::LinkedList&lt;T&gt;::pop(std::size_t index) {</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment">//     if (empty())</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment">//         throw std::out_of_range(&quot;Empty list&quot;);</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">//     if (index == 0) {</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment">//         return pop_front();</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment">//     } else {</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">//         Node *aux = get_index(index - 1);</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment">//         aux-&gt;next(aux-&gt;next()-&gt;next());</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment">//         aux-&gt;next()-&gt;data().~T();</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment">//         delete aux-&gt;next();</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment">//         size_--;</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment">//     }</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">// void structures::LinkedList&lt;T&gt;::pop_back() {</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">//     Node *aux = get_index(size() - 2);</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">//     aux-&gt;next()-&gt;data().~T();</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">//     delete aux-&gt;next();</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">//     aux-&gt;next(nullptr);</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">//     size_--;</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment">// void structures::LinkedList&lt;T&gt;::pop_front() {</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">//     T value = head-&gt;data();</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment">//     Node *aux = head;</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment">//     head = aux-&gt;next();</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">//     aux-&gt;data().~T();</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment">//     delete aux;</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment">//     size_--;</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">// void structures::LinkedList&lt;T&gt;::remove(const T&amp; data) {</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">//     pop(find(data));</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">// bool structures::LinkedList&lt;T&gt;::empty() const {</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">//     return size_ == 0;</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">// bool structures::LinkedList&lt;T&gt;::contains(const T&amp; data) {</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">//     if (find(data) == size())</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment">//         return false;</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">//     return true;</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment">// std::size_t structures::LinkedList&lt;T&gt;::find(const T&amp; data) const {</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">//     Node *aux = head;</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">//     std::size_t index;</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">//     while (aux != nullptr &amp;&amp; aux-&gt;data() != data) {</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment">//         aux = aux-&gt;next();</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment">//         index++;</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">//     }</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">//     return index;</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment">// std::size_t structures::LinkedList&lt;T&gt;::size() const {</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="comment">//     return size_;</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="comment">// std::size_t structures::LinkedList&lt;T&gt;::binary_search(const T&amp; data) {</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment">//     return binary_search(data, 0, size() - 1);</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="comment">// std::size_t structures::LinkedList&lt;T&gt;::binary_search(const T&amp; data, std::size_t left, std::size_t right) {</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="comment">//     if(!empty())</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="comment">//         if (right &gt;= left) {</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="comment">//             std::size_t mid = left + (right - left) / 2;</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="comment">//             if (at(mid) == data)</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="comment">//                 return mid;</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="comment">//             if (at(mid) &gt; data)</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment">//                 return binary_search(data, left, mid - 1);</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment">//             return binary_search(data, mid + 1, right);</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment">//         }</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment">//     // Elemento não presente</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment">//     return size();</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="comment">// TEMP</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="comment">// void structures::LinkedList&lt;T&gt;::print() {</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment">//     Node *aux = head;</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment">//     while (aux != nullptr) {</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="comment">//         std::cout &lt;&lt; aux-&gt;data() &lt;&lt; &#39;\n&#39;;</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="comment">//         aux = aux-&gt;next();</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="comment">//     }</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment">// }</span></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html"><div class="ttname"><a href="classstructures_1_1LinkedList.html">structures::LinkedList</a></div><div class="ttdoc">Lista encadeada genérica.</div><div class="ttdef"><b>Definition:</b> linked_list.h:11</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_a00b4fc60277cb34af9e3cbe7c5091b74"><div class="ttname"><a href="classstructures_1_1LinkedList.html#a00b4fc60277cb34af9e3cbe7c5091b74">structures::LinkedList::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdoc">Verifica se a lista está vazia.</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_a0424964689117b57eb10ec0b6e8ee40e"><div class="ttname"><a href="classstructures_1_1LinkedList.html#a0424964689117b57eb10ec0b6e8ee40e">structures::LinkedList::insert_sorted</a></div><div class="ttdeci">void insert_sorted(const T &amp;data)</div><div class="ttdoc">Insere em ordem.</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_a17518d107c26fcbdaa6e143ac54d72dc"><div class="ttname"><a href="classstructures_1_1LinkedList.html#a17518d107c26fcbdaa6e143ac54d72dc">structures::LinkedList::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Deleta todos os elementos.</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_a17b473cc2942b279974b48cd70296d30"><div class="ttname"><a href="classstructures_1_1LinkedList.html#a17b473cc2942b279974b48cd70296d30">structures::LinkedList::at</a></div><div class="ttdeci">T &amp; at(std::size_t index)</div><div class="ttdoc">Acessa o elemento na posição, lançando exceções se necessário.</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_a3d06185819f6534a826101bc2c18ba94"><div class="ttname"><a href="classstructures_1_1LinkedList.html#a3d06185819f6534a826101bc2c18ba94">structures::LinkedList::size</a></div><div class="ttdeci">std::size_t size() const</div><div class="ttdoc">Tamanho da lista.</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_a4bde57bd5b2c22df58511aca92cc93dd"><div class="ttname"><a href="classstructures_1_1LinkedList.html#a4bde57bd5b2c22df58511aca92cc93dd">structures::LinkedList::~LinkedList</a></div><div class="ttdeci">~LinkedList()</div><div class="ttdoc">Destrutor.</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_a6a091f1d512d6aa6f81f748ccd8067ba"><div class="ttname"><a href="classstructures_1_1LinkedList.html#a6a091f1d512d6aa6f81f748ccd8067ba">structures::LinkedList::operator[]</a></div><div class="ttdeci">T &amp; operator[](std::size_t index)</div><div class="ttdoc">Acessa o elemento na posição.</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_a799e1f08027d5f13d4bb1b8d0f1421d8"><div class="ttname"><a href="classstructures_1_1LinkedList.html#a799e1f08027d5f13d4bb1b8d0f1421d8">structures::LinkedList::push_front</a></div><div class="ttdeci">void push_front(const T &amp;data)</div><div class="ttdoc">Insere no inicio.</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_a85763d7f75bac081153f5dfe47e73db5"><div class="ttname"><a href="classstructures_1_1LinkedList.html#a85763d7f75bac081153f5dfe47e73db5">structures::LinkedList::contains</a></div><div class="ttdeci">bool contains(const T &amp;data)</div><div class="ttdoc">Verifica se o elemento está na lista.</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_a9e2b97df090e383fc38066c6b9bfefc8"><div class="ttname"><a href="classstructures_1_1LinkedList.html#a9e2b97df090e383fc38066c6b9bfefc8">structures::LinkedList::find</a></div><div class="ttdeci">std::size_t find(const T &amp;data) const</div><div class="ttdoc">A posição do elemento específico.</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_aa5c5c3b695669e04783aa647490056ba"><div class="ttname"><a href="classstructures_1_1LinkedList.html#aa5c5c3b695669e04783aa647490056ba">structures::LinkedList::binary_search</a></div><div class="ttdeci">std::size_t binary_search(const T &amp;data, std::size_t left, std::size_t right)</div><div class="ttdoc">Busca binária na lista, dado um range.</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_aad839493b8c7cee3bd58ac4253ee30ef"><div class="ttname"><a href="classstructures_1_1LinkedList.html#aad839493b8c7cee3bd58ac4253ee30ef">structures::LinkedList::push_back</a></div><div class="ttdeci">void push_back(const T &amp;data)</div><div class="ttdoc">Insere no final.</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_aae0756b190753daa02e55ba8bd7b8b0a"><div class="ttname"><a href="classstructures_1_1LinkedList.html#aae0756b190753daa02e55ba8bd7b8b0a">structures::LinkedList::pop_front</a></div><div class="ttdeci">void pop_front()</div><div class="ttdoc">Retirar do inicio.</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_aae96a20d318d024d7bdb78660ae678f9"><div class="ttname"><a href="classstructures_1_1LinkedList.html#aae96a20d318d024d7bdb78660ae678f9">structures::LinkedList::pop_back</a></div><div class="ttdeci">void pop_back()</div><div class="ttdoc">Retirar do final.</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_ab648e74041f9b63a74a09eeae88d455d"><div class="ttname"><a href="classstructures_1_1LinkedList.html#ab648e74041f9b63a74a09eeae88d455d">structures::LinkedList::binary_search</a></div><div class="ttdeci">std::size_t binary_search(const T &amp;data)</div><div class="ttdoc">Busca binária na lista, retorna size se o elemento não estiver presente.</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_acd2df612c722d02715f8500a0b2cccc0"><div class="ttname"><a href="classstructures_1_1LinkedList.html#acd2df612c722d02715f8500a0b2cccc0">structures::LinkedList::remove</a></div><div class="ttdeci">void remove(const T &amp;data)</div><div class="ttdoc">Remover o elemento.</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_ad8ab4d26e71fe2db2e950653add79856"><div class="ttname"><a href="classstructures_1_1LinkedList.html#ad8ab4d26e71fe2db2e950653add79856">structures::LinkedList::pop</a></div><div class="ttdeci">void pop(std::size_t index)</div><div class="ttdoc">Retirar da posição.</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_adcd4bff09509caddbbb79a11cb2d1e8f"><div class="ttname"><a href="classstructures_1_1LinkedList.html#adcd4bff09509caddbbb79a11cb2d1e8f">structures::LinkedList::insert</a></div><div class="ttdeci">void insert(const T &amp;data, std::size_t index)</div><div class="ttdoc">Insere no índice especificado.</div></div>
+<div class="ttc" id="aclassstructures_1_1LinkedList_html_ae0698cfefd91c294f65b8851dbebc713"><div class="ttname"><a href="classstructures_1_1LinkedList.html#ae0698cfefd91c294f65b8851dbebc713">structures::LinkedList::LinkedList</a></div><div class="ttdeci">LinkedList()</div><div class="ttdoc">Construtor padrão, inicializa uma lista vazia.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
